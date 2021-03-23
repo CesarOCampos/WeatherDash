@@ -1,0 +1,51 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    background-color: rgba(160, 224, 243, 0.822);
+}
+
+.jumboStyle {
+    text-align: center;
+    background-color: rgba(82, 240, 122, 0.658);
+    color: black;
+    border-radius: 5px;
+    border-bottom: 10px solid black;
+}
+
+.searchBar {
+    margin-right: 5px;
+    padding-left: 2px;
+}
+
+.forecast {
+    text-align: center
+}
+
+.uvHigh {
+    background-color: red;
+    color: white
+}
+
+.uvSafe {
+    background-color: green;
+    color: white
+}
+
+.uvMed {
+    background-color: yellow;
+    color: black;
+}
+
+.uvMod {
+    background-color: orange;
+    color: black;
+}
+
+.fiveDay {
+    background-color: rgb(189, 135, 250);
+    color: black;
+    margin: 0 auto;
+    margin-right: 5px;
+    padding: 10px;
+}
