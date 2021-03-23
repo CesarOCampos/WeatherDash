@@ -1,11 +1,11 @@
 // API KEY : 7c06c0508466362a3270e4d7df99642f
-var userInput
-var uvIndex
 var RecentCSearch = JSON.parse(localStorage.getItem('cities')) || []
 var showCity = document.getElementById('cityInfo')
 var Select5 = document.getElementById('fiveDay')
 var CityPick = document.getElementById('pastCities')
 var searchBtn = document.querySelector("#SEARCH");
+var userInput
+var uvIndex
 
 //API call by city name: api.openweathermap.org/data/2.5/weather?q=<cityName>
 function Weather101(event) {
@@ -13,11 +13,11 @@ function Weather101(event) {
     if (target.classList.contains('btn')) {
         userInput = document.getElementById('citySearch').value;
         displayWeather(userInput)
-        document.getElementById('citySearch').value = ''; //empty out userInput
+        document.getElementById('citySearch').value = ''; //clears the user input
     }
 }
 const PrevCity = _ => {
-    CityPick.innerHTML = '' //set to empty before every render
+    CityPick.innerHTML = '' //should empty each run
     for (var i = 0; i < RecentCSearch.length; i++) {
         var cityNode = document.createElement('div');
         cityNode.innerHTML = `${RecentCSearch[i]} <hr>`;
@@ -39,7 +39,6 @@ const casing = str => { //Capitalize first letter of every word in the string
 const displayWeather = userInput => { //stores recent searches in local storage and displayed under search
     userInput = casing(userInput)
     RecentCSearch.push(userInput)
-
     localStorage.setItem('cities', JSON.stringify(RecentCSearch))
     PrevCity()
     getCityWeather(userInput)
@@ -52,7 +51,6 @@ const getCityWeather = userInput => {
         .then(({ main: { temp, humidity }, wind: { speed }, coord: { lon, lat } }) => {
             var info = document.createElement('div')
             temp = toFarenheit(temp)
-
             info.innerHTML = `<h2>${userInput} 
             ${moment().format('MM/DD/YYYY')}</h2>
             <p> Temperature: ${temp} ºF </p> 
