@@ -32,6 +32,7 @@ THEN I am again presented with current and future conditions for that city
 
 ## Mock-Up
 
+![image](https://user-images.githubusercontent.com/40922162/112093347-40346500-8b67-11eb-9617-65df52cfdafe.png)
 
 
 ## URL
